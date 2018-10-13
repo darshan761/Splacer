@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "565696025069",
+    "firebase_url": "https://splacer-65469.firebaseio.com",
+    "project_id": "splacer-65469",
+    "storage_bucket": "splacer-65469.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565696025069:android:8628b1be19cb187a",
+        "android_client_info": {
+          "package_name": "com.example.hp.splacer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565696025069-pf2uaql1nj3u8spjophsmtfgl3pfk9sb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hp.splacer",
+            "certificate_hash": "16b0cd7e501708c4fdde51d9cb53fda968b309f5"
+          }
+        },
+        {
+          "client_id": "565696025069-bq330giphsubb5sa3b5dvu02c7ql5gtl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpWI51EidygInWfLwOqyjopiM7ohhLSdk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565696025069-bq330giphsubb5sa3b5dvu02c7ql5gtl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

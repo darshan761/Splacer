@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Splacer</string>
+    <string name="home">Home</string>
+    <string name="personal">Personal Details</string>
+    <string name="applied">Applied Offers</string>
+    <string name="wl">Waitlisted Offers</string>
+    <string name="logout">Logout</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="Designation">
+        <item>Software Engineer</item>
+        <item>Networking Head</item>
+        <item>Data analyst</item>
+        <item>Hardware Engineer</item>
+    </string-array>
+    <string-array name="Period">
+        <item>6 months</item>
+        <item>1 year</item>
+        <item>2 year or more</item>
+    </string-array>
+    <string-array name="Type">
+        <item>Internship</item>
+        <item>Placement</item>
+    </string-array>
+    <string-array name="CTC">
+        <item>below 3 lpa </item>
+        <item>upto 5 lpa</item>
+        <item>upto 9 lpa</item>
+        <item>9 lpa and above</item>
+    </string-array>
+    <string-array name="Loc">
+        <item>Mumbai</item>
+        <item>Pune</item>
+        <item>Bangalore</item>
+        <item>Delhi</item>
+    </string-array>
+</resources>

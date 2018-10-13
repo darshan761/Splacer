@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/personal"
+            android:icon="@drawable/ic_user"
+            android:title="@string/personal" />
+        <item
+            android:id="@+id/applied"
+            android:icon="@drawable/ic_work"
+            android:title="@string/applied" />
+        <item
+            android:id="@+id/waitlisted"
+            android:icon="@drawable/ic_access_time"
+            android:title="@string/wl" />
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/ic_exit"
+            android:title="@string/logout" />
+    </group>
+</menu>

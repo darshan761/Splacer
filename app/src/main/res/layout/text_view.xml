@@ -1,0 +1,12 @@
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="63dp"
+    android:textSize="45dp"
+    android:text="Kemcho"
+    android:background="@drawable/border"
+    android:padding="2dp"
+    android:textColor="@android:color/holo_blue_dark"
+    android:textStyle="bold"
+    android:textAlignment="center"
+    xmlns:android="http://schemas.android.com/apk/res/android" />
+
