@@ -35,7 +35,7 @@ class fragment_personal:Fragment() {
         var cgp = view.findViewById<EditText>(R.id.user_cgp)
         var title = view.findViewById<TextView>(R.id.user_profile_name)
         var ee = view.findViewById<TextView>(R.id.user_profile_short_bio)
-        var up = view.findViewById<ImageView>(R.id.userphoto)
+
         em?.setText(mAuth?.currentUser?.email.toString())
 
         var mDatabase: DatabaseReference

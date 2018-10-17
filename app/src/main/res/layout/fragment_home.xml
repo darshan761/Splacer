@@ -80,6 +80,12 @@
             android:layout_margin="10dp"
             android:layout_height="30dp" />
 
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:id="@+id/search_icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/search"
             android:layout_width="fill_parent"

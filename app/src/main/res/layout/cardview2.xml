@@ -85,7 +85,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textSize="24dp"
-            android:layout_marginTop="400dp"
+            android:layout_below="@+id/Comp_Desp"
             android:layout_marginBottom="24dp"
             android:textColor="@android:color/white"
             android:background="@android:color/holo_red_dark"

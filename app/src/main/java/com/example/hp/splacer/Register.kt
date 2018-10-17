@@ -4,8 +4,10 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ProgressBar
 import android.widget.Toast
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
@@ -26,11 +28,14 @@ class Register : AppCompatActivity() {
         var clss = findViewById<EditText>(R.id.Class)
         var cgp = findViewById<EditText>(R.id.user_cgp)
         var btnRegister = findViewById<Button>(R.id.register)
+        var progress = findViewById<ProgressBar>(R.id.prgss)
+        progress.visibility = View.GONE
         var mDatabase: DatabaseReference
         btnRegister.setOnClickListener{view->
             if(!(TextUtils.isEmpty(editText1.text.toString()) || TextUtils.isEmpty(editText2.text.toString())
                     || TextUtils.isEmpty(n.text.toString()) || TextUtils.isEmpty(m.text.toString()) ||
                     TextUtils.isEmpty(clss.text.toString()) || TextUtils.isEmpty(cgp.text.toString())) ) {
+                progress.visibility = View.VISIBLE
                 mAuth.createUserWithEmailAndPassword(editText1.text.toString(), editText2.text.toString())
                         .addOnCompleteListener(this, OnCompleteListener<AuthResult> { task ->
                             if (task.isSuccessful) {
@@ -39,6 +44,7 @@ class Register : AppCompatActivity() {
                                 val i = mDatabase.child("User").push()
                                 i.setValue(u)
                                 Toast.makeText(this, "Register successful", Toast.LENGTH_LONG).show()
+                                progress.visibility = View.GONE
                             }
                         })
             }

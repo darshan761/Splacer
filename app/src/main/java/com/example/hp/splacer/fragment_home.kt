@@ -10,15 +10,11 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.Spinner
-import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import java.util.*
 import android.net.sip.SipErrorCode.TIME_OUT
-
+import android.widget.*
 
 
 /**
@@ -70,10 +66,12 @@ class fragment_home : Fragment() {
             // Apply the adapter to the spinner
             t.adapter = adapter
         }
-
+        val ser = view.findViewById<ProgressBar>(R.id.search_icon)
+        ser.visibility = View.GONE
         search.setOnClickListener { view ->
             val myDataset = ArrayList<Company?>()
 
+            ser.visibility = View.VISIBLE
             var mDatabase: DatabaseReference
             mDatabase = FirebaseDatabase.getInstance().reference
             var r = mDatabase.child("Company").orderByChild("Designation").equalTo(d.selectedItem.toString())
@@ -91,6 +89,7 @@ class fragment_home : Fragment() {
                     val i = Intent(context,aftersearch::class.java)
                     i.putExtra("Companies",myDataset)
                     startActivity(i)
+                    ser.visibility = View.GONE
 
                 }
 

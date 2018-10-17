@@ -20,6 +20,9 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_home.view.*
+import android.support.v7.app.AppCompatActivity
+
+
 
 /**
  * Created by HP on 04-10-2018.
@@ -85,6 +88,11 @@ class MyAdapter2(private val myDataset: ArrayList<Company>) :
                       it.child("Company").ref.removeValue()
                            it.child("email").ref.removeValue()
                            Toast.makeText(view.context,"Removed Successfully",Toast.LENGTH_LONG).show()
+                           val con : Context =view.context
+                           val ft  = con as AppCompatActivity
+                           val fr = ft.supportFragmentManager.beginTransaction().replace(R.id.content_frame,fragment_waitlist()).commit()
+
+
 
                        }
                 }
@@ -94,11 +102,7 @@ class MyAdapter2(private val myDataset: ArrayList<Company>) :
                     TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
                 }
             })
-            val con : Context =view.context
-          /* val ft :android.support.v4.app.FragmentTransaction = supportFragmentManager.beginTransaction()
-            ft.detach(fragment_waitlist())
-            ft.attach(fragment_waitlist())
-            ft.commit()*/
+
 
                 }
 

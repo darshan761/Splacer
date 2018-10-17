@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
                                 progress.visibility = View.GONE
                             } else {
                                 Toast.makeText(this, "Failed to Login", Toast.LENGTH_LONG).show()
+                                progress.visibility = View.GONE
                             }
                         })
             }

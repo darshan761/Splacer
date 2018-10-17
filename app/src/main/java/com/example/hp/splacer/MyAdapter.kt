@@ -10,8 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 
 
 /**
@@ -70,21 +69,64 @@ class MyAdapter(private val myDataset: ArrayList<Company>) :
         holder.type.text = "Type: "+myDataset[position].Type
         holder.apply.setOnClickListener { view ->
             var mDatabase: DatabaseReference
+            var flag = 0
             mDatabase = FirebaseDatabase.getInstance().reference
-                val ref: DatabaseReference = mDatabase.child("Applied").push()
-                ref.child("email").setValue(mAuth.currentUser?.email.toString())
-                ref.child("Company").setValue(myDataset[position].Name)
-                Toast.makeText(view.context, "Applied Sucessfully", Toast.LENGTH_LONG).show()
+            val  k = mDatabase.child("Applied").orderByChild("Company")
+            k.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(p0: DataSnapshot?) {
+                    p0?.children?.forEach {
+                     if( it.child("Company").getValue().toString().equals(myDataset[position].Name) &&
+                             it.child("email").getValue().toString().equals(mAuth.currentUser?.email.toString())) {
+                         flag = 1
+                     }
+                    }
+                    if (flag == 0) {
+                        val ref: DatabaseReference = mDatabase.child("Applied").push()
+                        ref.child("email").setValue(mAuth.currentUser?.email.toString())
+                        ref.child("Company").setValue(myDataset[position].Name)
+                        Toast.makeText(view.context, "Applied Sucessfully", Toast.LENGTH_LONG).show()
+                    }
+                    else{
+                        Toast.makeText(view.context,"Already applied",Toast.LENGTH_LONG).show()
+                    }
+                }
+
+                override fun onCancelled(p0: DatabaseError?) {
+
+                }
+            })
+
 
         }
         holder.waitlist.setOnClickListener{ view ->
             var mDatabase: DatabaseReference
+            var flag1 = 0
             mDatabase = FirebaseDatabase.getInstance().reference
+            val  k = mDatabase.child("Waitlist").orderByChild("Company")
+            k.addListenerForSingleValueEvent(object :ValueEventListener{
+                override fun onDataChange(p0: DataSnapshot?) {
+                    p0?.children?.forEach {
+                        if( it.child("Company").getValue().toString().equals(myDataset[position].Name) &&
+                                it.child("email").getValue().toString().equals(mAuth.currentUser?.email.toString())) {
+                            flag1 = 1
+                        }
+                    }
+                    if(flag1 == 0) {
+                        val ref: DatabaseReference = mDatabase.child("Waitlist").push()
+                        ref.child("email").setValue(mAuth.currentUser?.email.toString())
+                        ref.child("Company").setValue(myDataset[position].Name)
+                        Toast.makeText(view.context, "Waitlisted Sucessfully", Toast.LENGTH_LONG).show()
+                    }
+                    else{
+                        Toast.makeText(view.context, "Waitlisted Already", Toast.LENGTH_LONG).show()
+                    }
 
-                val ref: DatabaseReference = mDatabase.child("Waitlist").push()
-                ref.child("email").setValue(mAuth.currentUser?.email.toString())
-                ref.child("Company").setValue(myDataset[position].Name)
-                Toast.makeText(view.context, "Waitlisted Sucessfully", Toast.LENGTH_LONG).show()
+                }
+
+                override fun onCancelled(p0: DatabaseError?) {
+
+                }
+            })
 
         }
 

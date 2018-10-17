@@ -36,14 +36,6 @@
             android:background="#ebca0707"
             android:elevation="4dp"
             android:paddingBottom="24dp">
-            <ImageView
-                android:id="@+id/userphoto"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="266dp"
-                android:layout_marginTop="16dp"
-
-                android:src="@drawable/ic_edit_photo" />
 
             <TextView
                 android:id="@+id/user_profile_name"

@@ -5,7 +5,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="fill_parent"
     android:fitsSystemWindows="true"
    android:orientation="vertical"
-    android:background="@android:color/holo_red_light"
+    android:background="@drawable/bkg"
     android:paddingTop="56dp"
     android:paddingLeft="24dp"
     android:paddingRight="24dp">
@@ -92,6 +92,12 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     </android.support.design.widget.TextInputLayout>
 
     <!-- Signup Button -->
+    <ProgressBar
+        style="?android:attr/progressBarStyle"
+        android:id="@+id/prgss"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/register"
         android:layout_width="fill_parent"

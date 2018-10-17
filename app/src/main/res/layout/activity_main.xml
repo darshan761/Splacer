@@ -5,12 +5,12 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_red_light"
+    android:background="@drawable/bkg"
     android:paddingTop="56dp"
     android:paddingLeft="24dp"
     android:paddingRight="24dp">
 
-    <ImageView android:src="@drawable/logo"
+    <ImageView android:src="@drawable/login"
         android:layout_width="wrap_content"
         android:layout_height="72dp"
         android:layout_marginBottom="24dp"
